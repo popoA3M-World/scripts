@@ -2,9 +2,9 @@
 #
 
 SECONDS=0 # builtin bash timer
-ZIPNAME="Aura-$(date '+%Y%m%d-%H%M').zip"
+ZIPNAME="Stormbreaker-G-$(date '+%Y%m%d-%H%M').zip"
 TC_DIR="$HOME/tc/proton-clang"
-DEFCONFIG="holland1_defconfig"
+DEFCONFIG="holland2_defconfig"
 export KBUILD_BUILD_USER=popoAXM
 export KBUILD_BUILD_HOST=Circle-CI
 export PATH="$TC_DIR/bin:$PATH"
@@ -35,7 +35,7 @@ make -j"$(nproc --all)" O=out ARCH=arm64 CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=
 
 if [ -f "out/arch/arm64/boot/Image.gz-dtb" ]; then
 	echo -e "\nKernel compiled succesfully! Zipping up...\n"
-	if ! git clone -q https://github.com/popoASM-World/AnyKernel3 -b aura; then
+	if ! git clone -q https://github.com/popoASM-World/AnyKernel3 -b G; then
 		echo -e "\nCloning AnyKernel3 repo failed! Aborting..."
 		exit 1
 	fi
