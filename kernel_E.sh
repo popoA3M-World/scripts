@@ -5,7 +5,8 @@ SECONDS=0 # builtin bash timer
 ZIPNAME="Aura-$(date '+%Y%m%d-%H%M').zip"
 TC_DIR="$HOME/tc/proton-clang"
 DEFCONFIG="holland1_defconfig"
-
+export KBUILD_BUILD_USER=popoAXM
+export KBUILD_BUILD_HOST=Circle-CI
 export PATH="$TC_DIR/bin:$PATH"
 
 if ! [ -d "$TC_DIR" ]; then
